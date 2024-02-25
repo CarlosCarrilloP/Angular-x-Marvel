@@ -1,0 +1,8 @@
+<label for="search">Buscar héroe:</label>
+<input type="text" id="search" name="search" [(ngModel)]="searchWord" (keyup)="searchHeroes()" />
+
+<ul>
+  <li *ngFor="let hero of heroes">
+    <a [routerLink]="['/heroe', hero.id]">{{ hero.name }}</a>
+  </li>
+</ul>

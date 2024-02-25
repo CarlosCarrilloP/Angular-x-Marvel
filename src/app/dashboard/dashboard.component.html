@@ -1,0 +1,46 @@
+<div id="header" class="header">
+  <img src="../../assets/header.png" alt="header-marvel" class="desktop-header">
+
+  <img src="../../assets/header-movile.png" alt="header-marvel-mobile" class="mobile-header">
+
+
+  <div class="button-container">
+    <button (click)="scrollToContent()" class="scroll-button">
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24" style="fill: white;">
+        <path
+          d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+      </svg>
+
+    </button>
+  </div>
+
+</div>
+<div id="content" class="content">
+  <h2 class="space-top titulo2 marvel inner">MARVEL CHARACTER LIST</h2>
+
+  <div class="space center">
+    <mat-form-field appearance="outline" class="color space-inside custom-width">
+      <mat-label>Search the character</mat-label>
+      <input matInput type="text" [(ngModel)]="searchTerm" (input)="search()" />
+    </mat-form-field>
+  </div>
+
+
+
+
+  <div id="slider-container" class="slider-container">
+    <div class="flex">
+      <div class="outer-card" *ngFor="let character of filteredCharacters">
+        <div class="inner-card">
+          <a [routerLink]="['/characters', character.id]" class="custom-card-link">
+            <img [src]="character.thumbnail" alt="{{ character.name }}" class="custom-card-image" />
+            <div class="custom-card-text titulo">
+              <span class="name">{{ character.name }}</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

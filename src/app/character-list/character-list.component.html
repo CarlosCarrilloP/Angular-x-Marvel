@@ -1,0 +1,27 @@
+<div class="container" *ngIf="characterslist.length > 0">
+  
+  <div class="space2">
+    <mat-list class="list-container">
+      <mat-list-item *ngFor="let character of characterslist" [routerLink]="['/characters', character.id]"
+        class="custom-list-item">
+        <div class="flex">
+          <div>
+            <img [src]="
+                character.thumbnail.path + '.' + character.thumbnail.extension
+              " alt="{{ character.name }}" class="character-thumbnail" />
+          </div>
+
+          <span class="character-id">ID: {{ character.id }}</span>
+          <span> {{ character.name }}</span>
+        </div>
+      </mat-list-item>
+    </mat-list>
+
+    <div class="space" *ngIf="characterslist.length === 0">
+      <p>Cargando personajes...</p>
+    </div>
+
+    <mat-paginator [length]="totalCharacters" [pageSize]="pageSize" (page)="onPageChange($event)">
+    </mat-paginator>
+  </div>
+</div>

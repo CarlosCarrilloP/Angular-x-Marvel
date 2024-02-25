@@ -1,0 +1,325 @@
+
+
+@media (min-width: 768px) {
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: auto; /* Permite hacer scroll horizontal */
+    margin: 0; /* Compensa el margen negativo de las tarjetas */
+  }
+
+  .outer-card {
+    width: calc(22%); /* Calcula el ancho de cada tarjeta para que haya 3 tarjetas por fila */
+    max-width: none; /* Quita el ancho máximo para que las tarjetas puedan crecer */
+    margin: 50px 0;
+    margin-right: 3%;
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Incluye el relleno y el borde en el ancho total */
+  }
+  .inner-card {
+    display: flex;
+    width: 100%; /* Ocupa todo el ancho de la tarjeta */
+    height: 100%; /* Altura fija para todas las tarjetas */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde */
+    border-radius: 10px; 
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+  }
+  .inner-card:hover {
+    transform: scale(1.2); /* Hace la tarjeta un 10% más grande */
+}
+
+  .custom-card-link{
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    height: 100%; /* Ocupa el 100% del alto del contenedor */
+    object-fit: cover;
+  }
+  .custom-card-link {
+   
+    text-decoration: none;
+    color:black;
+    font-size: 32px;
+    text-align: center;
+    font-family: Marvel, sans-serif;
+    text-transform: uppercase;
+  }
+
+  .custom-card-link:hover {
+    color:red;
+  }
+
+
+  .custom-card-text{
+   margin-top: 5%;
+   line-height: 1;
+   font-size: 26px;
+  }
+
+
+  .header {
+    width: 100vw; /* Ancho del viewport */
+    height: 100vh; /* Alto del viewport */
+    overflow: hidden;
+    position:relative; /* Oculta cualquier parte de la imagen que se desborde del contenedor */
+  }
+
+  .desktop-header {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Asegura que la imagen esté visible en dispositivos de escritorio */
+  }
+  
+  .mobile-header {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; /* Por defecto, oculta la imagen móvil */
+  }
+  .custom-card-image{
+      width: 440px;  /* Ocupa el 100% del ancho del contenedor 440 x 524 */
+      height: 524px;  
+      object-fit: cover;
+      
+  }
+  .custom-card-image img{
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain;
+  }
+
+  .button-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+  }
+
+  .scroll-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .scroll-button:hover {
+    animation: bounce 0.5s ease;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  #content {
+    height: 100vh;
+    
+  }
+
+  .space-top {
+    padding-top: 5%;
+  }
+
+  .titulo2 {
+    font-family: Marvel;
+    color: red;
+    font-size: 56px;
+    text-align: center;
+  }
+
+  .center {
+    margin-top: 2%;
+    text-align: center;
+    
+  }
+
+  .slider-container {
+    width: 100%;
+    padding: 0 30px; /* Agrega un pequeño relleno a cada lado del contenedor */
+    box-sizing: border-box; /* Incluye el relleno en el ancho total */
+  }
+  .space {
+    width: calc(100% - 20px); /* Ancho igual al 100% del contenedor menos 40px de margen */
+    margin: 0 auto; /* Centra horizontalmente el elemento */
+  }
+
+
+  
+  
+}
+
+
+
+@media (max-width: 767px) {
+    .desktop-header {
+    display: none; /* Oculta la imagen de escritorio en dispositivos móviles */
+  }
+
+  .mobile-header {
+    display: block; /* Muestra la imagen móvil en dispositivos móviles */
+  }
+  .header {
+    width: 100vw;
+    height: 100vh; /* Por ejemplo, puedes ajustar la altura al 50% del viewport */
+    overflow: hidden;
+  }
+
+  .header img {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .slider-container {
+    overflow-x: auto; 
+    white-space: nowrap;
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .flex {
+    display: flex;
+    flex-direction: row; /* Cambiado de 'row-reverse' a 'row' */
+  }
+  
+  .outer-card {
+    margin-left: 10px;
+    width: calc(100vw - 20px);
+    max-width: 260px;
+    min-height: 340px;
+    margin-bottom: 20px;
+  }
+  
+  .inner-card {
+    border-radius: 8px;
+    overflow: hidden;
+   
+  }
+  
+  .custom-card-link {
+    text-decoration: none;
+  }
+  
+  .custom-card-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+  
+  .custom-card-text {
+    text-align: center; 
+    color: black;
+    overflow-wrap: break-word; 
+  }
+  
+  .titulo {
+    font-size: 18px;
+    font-weight: bold;
+  }
+ 
+  
+  .slider-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .space {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+  }
+
+  .space-inside {
+    width: 100%; 
+  }
+  
+  .color {
+    color: red !important; 
+  }
+  
+  .marvel {
+    font-family: Marvel, Arial, Helvetica, sans-serif;
+    color: red;
+    font-size: 32px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+ 
+  .button-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+  }
+
+  .scroll-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .scroll-button:hover {
+    animation: bounce 0.5s ease;
+  }
+
+  #content {
+    height: 100vh;
+    
+  }
+  .titulo2 {
+    font-family: Marvel;
+    color: red;
+    font-size: 56px;
+    text-align: center;
+  }
+
+  .space-top {
+    padding-top: 20%;
+    padding-bottom: 10%;
+  }
+  
+  .inner{
+    line-height: 2;
+  }
+
+
+}
+
+
+
+
+

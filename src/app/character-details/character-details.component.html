@@ -1,0 +1,59 @@
+<div class="vertical-center">
+  <div class="character-container">
+    <div class="character-info">
+      <div *ngIf="character" class="center-content">
+        <h2 class="text-center h2">{{ character.name }}</h2>
+        <p class="text-center">{{ character.description }}</p>
+        <p class="space-top text-center">Este personaje aparece en: <span class="comic-count">{{ character.comics }}</span> comics</p>
+
+        <p class="space-top text-center">Este personaje aparece en: <span class="comic-count">{{ character.series }}</span> series</p>
+
+      </div>
+      <div *ngIf="!character" class="center-content">
+        <p>Cargando personaje...</p>
+      </div>
+    </div>
+    <div class="character-image">
+      <img *ngIf="character" (load)="imageLoad()" [src]="character.thumbnail" width="500px" alt="{{ character.name }}">
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="character" id="comics-section" class="comics-section">
+  <h2 class="text-center marvel" *ngIf="comicsCharacters.length > 0">Comics de {{ character.name }}</h2>
+  <div class="comics-list-wrapper">
+    <div class="comics-list">
+      <div class="comic" *ngFor="let comic of comicsCharacters; let i = index" [ngClass]="{ 'hidden': i >= 3 && !showMore }">
+        <img [src]="comic.thumbnail" alt="{{ comic.name }}" class="comic-image">
+        <h3 class="comic-title">{{ comic.name }}</h3>
+      </div>
+    </div>
+    <button *ngIf="comicsCharacters.length > 3" class="show-more-btn custom-btn btn-5" (click)="toggleShowMore()">{{ showMore ? 'Mostrar menos' : 'Mostrar más' }}</button>
+  </div>
+</div>
+
+<div *ngIf="character" id="comics-section" class="comics-section">
+  <h2 class="text-center marvel" *ngIf="seriesCharacters.length > 0">Series de {{ character.name }}</h2>
+  <div class="comics-list-wrapper">
+    <div class="comics-list">
+      <div class="comic" *ngFor="let series of seriesCharacters; let i = index" [ngClass]="{ 'hidden': i >= 3 && !showMore2 }">
+        <img [src]="series.thumbnail" alt="{{ series.name }}" class="comic-image">
+        <h3 class="comic-title">{{ series.name }}</h3>
+      </div>
+    </div>
+    <button *ngIf="seriesCharacters.length > 3" class="show-more-btn custom-btn btn-5" (click)="toggleShowMore2()">{{ showMore2 ? 'Mostrar menos' : 'Mostrar más' }}</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+ 
+
+
+
+

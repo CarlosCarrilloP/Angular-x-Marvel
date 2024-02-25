@@ -1,0 +1,43 @@
+.mat-toolbar {
+    background-color: #f4f0e0;
+    width: 100%;
+    color: black; 
+    margin-bottom: 4%;
+    position: fixed;
+    z-index: 1000;
+    
+   
+  }
+  
+  .logo {
+    margin-right: auto; 
+    margin-left: 6%;
+  }
+  
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; 
+    width: 100%; 
+  }
+  
+  .nav-button {
+    font-family: Marvel;
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px; 
+    transition: color 0.3
+    
+  }
+  .nav-button:hover {
+    color: #e00000; 
+    background-color: #f4f0e0;
+  }
+
+  .colored-background {
+    background-color: transparent;
+  }
+  
