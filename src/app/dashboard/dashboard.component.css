@@ -234,7 +234,7 @@
   .custom-card-text {
     text-align: center; 
     color: black;
-    overflow-wrap: break-word; 
+    white-space: pre-line;
   }
   
   .titulo {
